@@ -1,29 +1,17 @@
-#Algoritmo 1: Crea una lista de 5 ingenieros (in ingeneiro es un diccioanrio)
+#Centralizar el llamado a las funciones y ejecutar solo este codigo
+from funcionUno import crear_lista_ingenieros
+from funcionDos import autenticar_usuario
+from funcionesUtiles import calcular_promedio,clasificar_promedio
 
+#Como incluir en el main la funcion1?
+correoBD="correo@gmail.com"
+contraseñaBD="admin123"
 
-
-#creo la lista
-lista=[]
-
-for _ in range(1,6):
-    
-    #creo el diccionario
-    diccionario={}
-    
-    #Poblando el diccionario (Necesito que el id se un entero generado por python de forma aleatoria no negativo)(Necesito que el id sea una cadena alfanumerica)
-    diccionario["id"]=int(input("Digita el id del empleado: "))
-    #Estas variables deben convertirse en claves o atributos del diccionario
-    '''nombres=input("Digita los nombres empleado")
-    documento=input("Digita el documento: ")
-    correo=input("Digita el correo: ")
-    contraseña=input("Digita la contraseña: ")'''
-
-    #Agregar un elemento (Diccionario) a una lista
-    lista.append(diccionario)
-
-print(lista)
-
-
-
-
-
+todoSalioBien=autenticar_usuario(correoBD,contraseñaBD,3)
+if todoSalioBien:
+    mediciones=[120,250,340,500,301,310,300,40,87,500] #Como vuelvo esta linea una funcion
+    promedio=calcular_promedio(mediciones)
+    estadoOperacion=clasificar_promedio(promedio)
+    print(estadoOperacion)
+else:
+    print("🥹 No se continua porque el Login fallo")
